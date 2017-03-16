@@ -5,6 +5,7 @@ defmodule Credo.SourceFile do
             ast:      nil,
             valid?:   nil,
             issues:   [],
+            config_comments: [],
             lint_attributes: []
 
   @type t :: module

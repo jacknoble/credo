@@ -28,6 +28,7 @@ defmodule Credo.Config do
             # state, which is maintained over the course of Credo's execution
             skipped_checks:     nil,
             assigns:            %{},
+            config_comment_map: %{},
             lint_attribute_map: %{} # maps filenames to @lint attributes
 
   @doc """
