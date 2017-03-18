@@ -56,6 +56,15 @@ defmodule Credo.Check.Runner do
           Map.put(memo, source_file.filename, source_file.lint_attributes)
         end)
 
+    if Map.size(lint_attribute_map) > 0 do
+      Credo.CLI.Output.UI.warn ""
+      Credo.CLI.Output.UI.warn [:orange, "@lint is deprecated in favor of a new comment syntax and will be removed in v1.0."]
+      Credo.CLI.Output.UI.warn [:orange, "For the new syntax, please refer to Credo's CHANGELOG of v0.7.0:"]
+      Credo.CLI.Output.UI.warn ""
+      Credo.CLI.Output.UI.warn [:orange, "https://github.com/rrrene/credo/blob/master/CHANGELOG.md"]
+      Credo.CLI.Output.UI.warn ""
+    end
+
     %Config{config | lint_attribute_map: lint_attribute_map}
   end
 
